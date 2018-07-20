@@ -1,0 +1,45 @@
+<mvc:View 
+controllerName="com.treinamento.demoBindingTypesXML.controller.Root" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<!-- Property Binding via View XML-->
+					<Panel>
+						<content>
+							<Label text="Property Binding:"/>
+							<Input value="{/texto}"></Input>
+							<Input value="{/objeto/propriedade1}"></Input>
+						</content>
+					</Panel>
+					
+					<!-- Element Binding via View XML -->
+					<Panel binding="{/objeto}">
+						<content>
+							<Label text="Element Binding:"/>
+							<Input  value="{propriedade1}"></Input>
+							<Input  value="{propriedade2}"></Input>
+						</content>
+					</Panel>
+					
+					<!-- Aggregation Binding via View XML -->
+					<Panel>
+						<content>
+							<Label text="Aggregation Binding:"/>
+							<MultiComboBox items="{/vetor}">
+								<items>
+									<core:Item key="{id}" text="{texto}"/>
+								</items>
+							</MultiComboBox>
+						</content>
+					</Panel>
+					
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
